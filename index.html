@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+ <main id="mainArea" class="menu">
+    <header id="header">
+        <div class="playerBlock left">
+            <div class="playerMeta">
+                <span class="playerName" id="xPlayerName">-</span>
+                <span class="playerScoreCorner" id="xPlayerScore">SCORE: 0</span>
+            </div>
+            <div class="player" id="xplayerDisplay">X</div>
+        </div>
+        <h3 id="titleHeader">Choose Mode</h3>
+        <div class="playerBlock right">
+            <div class="player" id="oplayerDisplay">O</div>
+            <div class="playerMeta">
+                <span class="playerName" id="oPlayerName">-</span>
+                <span class="playerScoreCorner" id="oPlayerScore">SCORE: 0</span>
+            </div>
+        </div>
+    </header>
+
+    <div id="scoreDisplay">PLAYER: - | SCORE: 0</div>
+
+    <div id="modeSelect">
+        <button class="modeBtn" data-mode="pvp" onclick="console.log('PVP clicked')">2 Players</button>
+        <button class="modeBtn" data-mode="ai" onclick="console.log('AI clicked')">Play vs AI</button>
+    </div>
+
+    <section id="playerSelect" style="display: none;">
+        <div class="playerRow">
+            <label for="playerOneInput">PLAYER 1</label>
+            <div class="nameInputWrap">
+                <input id="playerOneInput" type="text" maxlength="12" placeholder="PLAYER 1 NAME" list="savedPlayerNames" autocomplete="off" />
+                <div id="playerOneSuggestions" class="nameSuggestions" style="display: none;"></div>
+            </div>
+        </div>
+        <div class="playerRow" id="playerTwoRow" style="display: none;">
+            <label for="playerTwoInput">PLAYER 2</label>
+            <div class="nameInputWrap">
+                <input id="playerTwoInput" type="text" maxlength="12" placeholder="PLAYER 2 NAME" list="savedPlayerNames" autocomplete="off" />
+                <div id="playerTwoSuggestions" class="nameSuggestions" style="display: none;"></div>
+            </div>
+        </div>
+        <datalist id="savedPlayerNames"></datalist>
+        <button id="startGameBtn">Start Game</button>
+    </section>
+
+    <div id="board"></div>
+
+    <div id="actionButtons">
+        <button id="resetBtn">Restart</button>
+        <button id="backBtn">Back</button>
+        <button id="clearMemoryBtn">Clear AI Memory</button>
+    </div>
+ </main>    <!-- Winner overlay shown at end of game -->
+    <div id="winnerOverlay" class="winner-overlay hidden">
+        <span id="winnerOverlayText"></span>
+    </div>
+ <script src="script.js"></script>
+    
+</body>
+</html>    
